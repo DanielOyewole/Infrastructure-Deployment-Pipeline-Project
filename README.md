@@ -92,7 +92,7 @@ terraform apply
 - CloudWatch metrics for application and infrastructure
 - CloudWatch Logs for application logs
 - CloudWatch Alarms for critical metrics
-- X-Ray for distributed tracing (optional)
+- X-Ray for distributed tracing (this is optional)
 
 ## Deployment Strategy
 
