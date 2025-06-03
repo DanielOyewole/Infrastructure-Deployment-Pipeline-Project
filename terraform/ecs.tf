@@ -5,6 +5,7 @@ resource "aws_ecs_cluster" "main" {
 resource "aws_ecr_repository" "app" {
   name = "app-repo"
   image_tag_mutability = "MUTABLE"
+
   image_scanning_configuration {
     scan_on_push = true
   }
@@ -58,3 +59,16 @@ resource "aws_ecs_service" "app" {
   }
   depends_on = [aws_lb_listener.http]
 }
+
+terraform {
+  backend "s3" {
+    bucket = "my-terraform-state-infra"
+    key    = "state/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+
+
+
+
