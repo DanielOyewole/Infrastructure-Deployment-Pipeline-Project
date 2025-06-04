@@ -117,6 +117,7 @@ resource "aws_appautoscaling_policy" "ecs_cpu_scale_down" {
       scaling_adjustment          = -1
     }
   }
+}
 
  
 
