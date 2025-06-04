@@ -85,19 +85,7 @@ resource "aws_appautoscaling_policy" "ecs_cpu_scale_up" {
     }
   }
 
-  alarm {
-    alarm_name          = "ECSHighCPUUtilization"
-    comparison_operator = "GreaterThanThreshold"
-    evaluation_periods  = 2
-    metric_name         = "CPUUtilization"
-    namespace           = "AWS/ECS"
-    period              = 60
-    statistic           = "Average"
-    threshold           = 70
-    dimensions = {
-      ClusterName = aws_ecs_cluster.main.name
-      ServiceName = aws_ecs_service.app.name
-    }
+  
   }
 }
 
