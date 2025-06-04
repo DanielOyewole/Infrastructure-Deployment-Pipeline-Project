@@ -134,15 +134,5 @@ resource "aws_appautoscaling_policy" "ecs_cpu_scale_down" {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket = "my-terraform-state-infra"
-    key    = "state/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
-
-
 
 
