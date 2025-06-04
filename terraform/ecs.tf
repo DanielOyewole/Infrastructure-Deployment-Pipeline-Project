@@ -82,8 +82,10 @@ resource "aws_appautoscaling_policy" "ecs_cpu_scale_up" {
     step_adjustment {
       metric_interval_lower_bound = 0
       scaling_adjustment          = 1
-   }
+    }
   }
+}
+
 resource "aws_appautoscaling_policy" "ecs_cpu_scale_down" {
   name               = "cpu-scale-down"
   policy_type        = "StepScaling"
@@ -101,7 +103,3 @@ resource "aws_appautoscaling_policy" "ecs_cpu_scale_down" {
     }
   }
 }
-
- 
-
-
