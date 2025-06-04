@@ -118,21 +118,6 @@ resource "aws_appautoscaling_policy" "ecs_cpu_scale_down" {
     }
   }
 
-  alarm {
-    alarm_name          = "ECSLowCPUUtilization"
-    comparison_operator = "LessThanThreshold"
-    evaluation_periods  = 2
-    metric_name         = "CPUUtilization"
-    namespace           = "AWS/ECS"
-    period              = 60
-    statistic           = "Average"
-    threshold           = 30
-    dimensions = {
-      ClusterName = aws_ecs_cluster.main.name
-      ServiceName = aws_ecs_service.app.name
-    }
-  }
-}
-
+ 
 
 
